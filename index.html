@@ -1,0 +1,132 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Indent</title>
+  <meta name="description" content="IndentApp">
+  <meta name="author" content="OxydyzeStudios">
+
+  <!-- CSS RESET -->
+
+  <link rel="stylesheet" href="css/reset.css">
+
+  <!-- GOOGLE FONTS -->
+
+  <link href='http://fonts.googleapis.com/css?family=Dosis:400,600,800' rel='stylesheet' type='text/css'>
+
+  <!-- CSS STYLES -->
+
+  <link rel="stylesheet" href="css/core.css">
+
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+	<nav class="navbar-top">
+		<div class="nav-left">
+			<span class="nav-divider"></span>
+			<span class="nav-title">Indent</span>
+		</div>
+		<div class="nav-right">
+			<span class="nav-divider"></span>
+			<span class="nav-login">Login</span>
+		</div>
+	</nav>
+	<div id="landing">
+		<figure class="box"></figure>
+		<nav>
+			<span class="login">Login</span>
+		</nav>
+		<section class="landing">
+			<h1>Indent</h1>
+			<h3>For writers, by writers.</h3>
+			<p> Indent is a set of tools for writers, game designers, and roleplayers to create magnificent universes and everything within them. </p>
+		</section>
+	</div>
+
+	<div id="page1">
+		<div class="title-container">
+			<h1>Characters</h1>
+			<div class="title-description">
+			<p>After all, every story needs a character or two..</p>
+			</div>
+		</div>
+
+		<article class="panel panel-left" id="panel1">
+			<section class="panel-logo panel_1">
+				<object type="image/svg+xml" data="img/phone.svg" height="118">Your browser does not support SVG</object>
+			</section>
+			<section class="panel-content">				
+					<h3>Make 'Em</h3>
+					<p>Indent allows you to make your characters with minimal fuss, allowing full control over it. Be it just adding in the nitty-gritty details that matter - oh - so much, or redefining your entire character, Indent does it all!</p>
+			</section>
+		</article>
+
+		<article class="panel panel-right" id="panel2">
+			<section class="panel-content">				
+					<h3>Crank 'Em</h3>
+					<p>Indent makes it easy to assign Objects [via each character's personal Inventory], or magic spells, or pretty much anything you wish to your character using Nodes! Oh, and did I mention that you can dynamically change or add/remove these as your story progresses? 
+					</p>
+			</section>
+			<section class="panel-logo panel_1">
+				<object type="image/svg+xml" data="img/phone.svg" height="118">Your browser does not support SVG</object>
+			</section>
+		</article>
+
+		<article class="panel panel-left" id="panel3">
+			<section class="panel-logo panel_1">
+					<object type="image/svg+xml" data="img/phone.svg" height="118">Your browser does not support SVG</object>
+				</section>
+				<section class="panel-content">				
+						<h3>Track 'Em</h3>
+						<p>Perhaps the coolest feature of all, an interactive map displayed right in your browser, containing the journey of your character over time. Oh, and you can also see the progress of other characters in your masterpiece. Wicked.</p>
+				</section>
+		</article>
+
+		<div class="empty-space-yolo"></div>
+	</div>
+
+<!-- END OF PAGE SCRIPTS GO HERE -->
+  <script src="js/jquery.min.js"></script>
+ <!-- LOAD JQUERY WAYPOINTS -->
+ <script src="js/waypoints.min.js"></script>
+<!-- INLINESCRIPTS -->
+<script>
+ $(document).ready(function() {
+  // PANNING ANIMATION
+	  $('#landing').mousemove(function(e){
+	    var amountMovedX = (e.pageX * -1 / 90);
+	    var amountMovedY = (e.pageY * -1 / 90);
+	    $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
+		});
+  // SCROLLBAR ANIMATION
+		 /*$('#page1').waypoint(function(direction) {
+
+				 if (direction==='down'){
+					  $('.navbar-top').slideDown('fast');
+					  console.log(direction);
+					}
+
+				else if (direction==='up'){
+					 $('.navbar-top').slideUp('fast');
+					}
+			});*/
+
+		 $('.panel').waypoint(function() {
+			  $(this).css({
+			  	"left": "0%",
+      			"opacity": "1"
+			  	});
+			  console.log('Hi')
+			}, 
+			{ offset: '40%' }
+			);
+	});
+  </script>
+</body>
+</html>
